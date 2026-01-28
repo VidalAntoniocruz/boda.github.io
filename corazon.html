@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Especial</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #ffffff;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .heart-svg {
+      width: 350px;
+      height: 350px;
+    }
+
+    .heart-path {
+      /* Color del contorno solicitado */
+      stroke: #f8e996;
+      stroke-width: 2;
+      fill: transparent;
+      
+      /* Propiedades para el efecto de dibujo */
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      
+      /* - draw: dura 3s y dibuja el contorno.
+         - fill-anim: inicia justo al terminar el dibujo (3s).
+      */
+      animation: 
+        draw 3s ease-in-out forwards, 
+        fill-anim 0.3s ease-in-out 1s forwards;
+    }
+
+    @keyframes draw {
+      from {
+        stroke-dashoffset: 1000;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fill-anim {
+      to {
+        fill: #f8e996;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <svg class="heart-svg" viewBox="0 0 100 100">
+    <path class="heart-path" d="M50,25 C50,15 65,5 80,15 C95,25 90,45 50,85 C10,45 5,25 20,15 C35,5 50,15 50,25" />
+  </svg>
+
+  <script>
+    // Configura aquí tu página de destino
+    const urlDestino = "https://boda-nayeliydeivis.my.canva.site/dag-uu1muw0"; 
+
+    // Esperamos 3.5 segundos (3s de dibujo + 0.5s de relleno) antes de redirigir
+    setTimeout(() => {
+      window.location.href = urlDestino;
+    }, 4000); // Damos un pequeño margen de 4 segundos para que se aprecie el resultado final
+  </script>
+
+</body>
+</html>
